@@ -22,11 +22,6 @@ body {
     background-color: var(--color-primary);
 }
 
-img {
-    width: 100%;
-    height: 100%;
-}
-
 .team {
     max-width: 150rem;
     min-height: 100vh;
@@ -61,7 +56,6 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* object-position: center 20%; */
     transition: all .5s ease-in-out;
 }
 
@@ -102,6 +96,11 @@ img {
 .team__member--content__previous-job--logo {
     width: 10rem;
     height: 5rem;
+}
+
+.team__member--content__previous-job--logo img {
+    width: 100%;
+    height: 100%;
 }
 
 .team__member:last-child {
