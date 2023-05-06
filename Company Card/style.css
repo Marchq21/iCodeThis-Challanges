@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-bg-pr: #1e213b;
+    --color-bg-sec: #272b4a;
+    --color-bg-ter: #232744;
+    --color-txt-pnk: #ec3f7a;
+    --color-txt-white: #ffffff;
+    --color-txt-gry: #bfbfc6;
+    --color-title-gry: #fefefe;
+    --color-icon-gry: #c3c4cd;
+    --color-icon-bl: #1b1e38;
+    --color-icon-star: #fec300;
+    --color-progress: #1b1e38;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg-pr);
+    color: var(--color-txt-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+.card {
+    width: 94rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.card__company--info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 8rem;
+    background-color: var(--color-bg-sec);
+    position: relative;
+}
+
+.left,
+.right {
+    position: absolute;
+    font-size: 6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.left {
+    left: 2rem;
+    color: var(--color-bg-pr);
+}
+
+.right {
+    right: 2.5rem;
+    color: var(--color-icon-gry);
+}
+
+.card__company--info__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.card__company--info__logo--img {
+    width: 16rem;
+    height: 16rem;
+    background-color: var(--color-txt-white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__company--info__logo--img img {
+    width: 80%;
+    object-fit: cover;
+}
+
+.card__company--info__logo--rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.card__company--info__logo--rating div {
+    display: flex;
+    gap: .5rem;
+}
+
+.card__company--info__logo--rating div i {
+    color: var(--color-icon-star);
+    font-size: 1.5rem;
+}
+
+.card__company--info__logo--rating span {
+    font-size: 1.4rem;
+}
+
+.card__company--info__history {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card__company--info--history--title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.card__company--info__history--link {
+    font-size: 1.5rem;
+    color: var(--color-txt-pnk);
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.card__company--info__history--link:visited {
+    color: var(--color-txt-pnk);
+}
+
+.card__company--info__history--link::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-txt-pnk);
+    transform-origin: right;
+    transform: scale(0);
+    transition: transform .35s ease-in-out;
+}
+
+.card__company--info__history--link:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+.card__company--info__history--desc {
+    font-size: 1.6rem;
+    color: var(--color-txt-gry);
+}
+
+.card__company--employees {
+    width: 100%;
+    display: flex;
+    gap: 6rem;
+    background-color: var(--color-bg-ter);
+    padding: 4rem 8rem;
+}
+
+.card__company--employees__number {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.card__company--employees__number--total h5,
+.card__company--employees__number--job h5,
+.card__company--employees__paid--info h4 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-txt-gry);
+}
+
+.card__company--employees__number--total h3,
+.card__company--employees__number--job h3 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.card__company--employees__number--job h3 {
+    color: var(--color-txt-pnk);
+}
+
+.card__company--employees__paid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.card__company--employees__paid--title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.card__company--employees__paid--info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.card__company--employees__paid--info h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-txt-gry);
+}
+
+.card__company--employees__paid--info div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card__company--employees__paid--info__progress {
+    width: 100%;
+    height: .8rem;
+    background-color: var(--color-progress);
+    border-radius: 2rem;
+}
+
+.card__company--employees__paid--info__progress div {
+    height: 100%;
+    background-color: var(--color-txt-pnk);
+    border-radius: 2rem;
+}
+
+.card__company--employees__paid--info:first-of-type .card__company--employees__paid--info__progress div {
+    width: 25%;
+}
+
+.card__company--employees__paid--info:nth-of-type(2) .card__company--employees__paid--info__progress div {
+    width: 30%;
+}
+
+.card__company--employees__paid--info:nth-of-type(3) .card__company--employees__paid--info__progress div {
+    width: 35%;
+}
+
+.card__company--employees__paid--info:nth-of-type(4) .card__company--employees__paid--info__progress div {
+    width: 10%;
+}
+
+.card__company--employees__paid--info:nth-of-type(5) .card__company--employees__paid--info__progress div {
+    width: 0;
+}
+
+.card__company--employees__paid--info>div>span {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width:800px) {
+    .card__company--info {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .card__company--employees {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .card__company--info__history {
+        text-align: center;
+    }
+}
