@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-main-bg: #edf3ff;
+    --color-bg-pr: #4d49e8;
+    --color-txt: #070921;
+    --color-border: #c5d0e6;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-main-bg);
+    line-height: 1.5;
+}
+
+fieldset {
+    border: none;
+}
+
+.sign-in {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sign-in__form {
+    background-color: #fff;
+    color: var(--color-txt);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 6rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 16px rgba(77, 73, 232, 0.4);
+    position: relative;
+}
+
+.sign-in__form::after {
+    position: absolute;
+    content: "";
+    top: -10%;
+    right: -5rem;
+    width: 100%;
+    height: 120%;
+    background-color: var(--color-bg-pr);
+    z-index: -1;
+    border-radius: 1rem;
+}
+
+.sign-in__form--title {
+    font-size: 3rem;
+    color: var(--color-txt);
+}
+
+
+.sign-in__form fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.sign-in__form fieldset input {
+    width: 30rem;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 1px solid var(--color-border);
+    border-radius: .5rem;
+}
+
+.sign-in__form label {
+    font-size: 1.2rem;
+}
+
+.sign-in__form--submit {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sign-in__form--submit input[type="submit"] {
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    background-color: var(--color-bg-pr);
+    color: #fff;
+    border: 1px solid var(--color-bg-pr);
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all .35s ease-in-out;
+}
+
+.sign-in__form--submit input[type="submit"]:hover {
+    background-color: #fff;
+    color: var(--color-bg-pr);
+}
+
+.sign-in__form--submit a,
+.sing-in__form--forget a {
+    text-decoration: none;
+    color: var(--color-txt);
+    font-size: 1.4rem;
+}
+
+.sing-in__form--forget {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sing-in__form--forget a {
+    padding-bottom: .1rem;
+    position: relative;
+    transition: all .25s ease-in-out;
+}
+
+.sing-in__form--forget a:hover {
+    color: var(--color-bg-pr);
+}
+
+.sing-in__form--forget a::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-txt);
+    width: 100%;
+    height: 1px;
+    transform-origin: left;
+    transition: transform .25s ease-in-out;
+}
+
+.sing-in__form--forget a:hover::after {
+    transform: scale(0);
+    transform-origin: right;
+}
+
+@media screen and (max-width:600px) {
+    .sign-in__form {
+        padding: 4rem 3rem;
+    }
+
+    .sign-in__form fieldset input {
+        width: auto;
+        padding: 1rem;
+    }
+}
