@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    background: #8E2DE2;
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.mega-menu {
+    background-color: #fff;
+    padding: 5rem;
+    padding-right: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    margin: 2rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mega-menu__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mega-menu__content>div:first-child {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.mega-menu__content>div:first-child svg {
+    width: 60%;
+    height: 60%;
+}
+
+.mega-menu__content--news {
+    background-color: #eef8ff;
+}
+
+.mega-menu__content--news svg {
+    color: #3dc3ff;
+}
+
+.mega-menu__content--gifts {
+    background-color: #f5f2ff;
+}
+
+.mega-menu__content--gifts svg {
+    color: #7c62e8;
+}
+
+.mega-menu__content--shop-by-product {
+    background-color: #fff2f6;
+}
+
+.mega-menu__content--shop-by-product svg {
+    color: #e44374;
+}
+
+.mega-menu__content--promotions {
+    background-color: #fff8ee;
+}
+
+.mega-menu__content--promotions i {
+    font-size: 2rem;
+    color: #f5a623;
+}
+
+.mega-menu__content--title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #060f27;
+    margin-bottom: 1rem;
+}
+
+.mega-menu__content--links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mega-menu__content--links__link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #060f27;
+    transition: all .2s ease-in-out;
+}
+
+.mega-menu__content--links__link:hover {
+    text-decoration: underline;
+    color: #3dc3ff;
+}
+
+.mega-menu__content--links__link.more {
+    color: #3dc3ff;
+}
+
+@media screen and (max-width:980px) {
+    .mega-menu {
+        grid-template-columns: repeat(3, 1fr);
+        padding-right: 5rem;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .mega-menu {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .mega-menu {
+        grid-template-columns: 1fr;
+        padding-right: 5rem;
+    }
+}
