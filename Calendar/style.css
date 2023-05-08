@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-primary: #3d4750;
+    --color-secondary: #73435c;
+    --color-gray-1: #736b76;
+    --color-gray-2: #86858d;
+    --color-text-1: #81fbd0;
+    --color-text-2: #56cbef;
+    --color-point-1: #f86093;
+    --color-point-2: #faaa02;
+    --color-point-3: #4fc2f5;
+    --color-bg-check: #50c4f4;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--color-primary);
+    background-image: -webkit-linear-gradient(to left bottom, var(--color-primary), var(--color-secondary) 15%);
+    background-image: linear-gradient(to left bottom, var(--color-primary) 20%, var(--color-secondary));
+}
+
+.calendar {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar__content {
+    display: grid;
+    grid-template-columns: minmax(30rem, 40rem);
+    grid-template-rows: repeat(3, min-content);
+}
+
+.calendar__content--months {
+    padding: 1rem 2rem;
+    color: #fff;
+    background-color: var(--color-gray-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar__content--months i {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.calendar__content--months__month {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.calendar__content--days {
+    padding: 2rem;
+    background-color: var(--color-gray-1);
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+}
+
+.calendar__content--days--name {
+    background-image: linear-gradient(to right, var(--color-text-1), var(--color-text-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+}
+
+.calendar__content--days--name li {
+    list-style: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.calendar__content--days-number {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, min-content);
+    gap: 1rem;
+}
+
+.calendar__content--days-number li {
+    list-style: none;
+    color: #fff;
+    display: grid;
+    font-size: 1.8rem;
+}
+
+.calendar__content--days-number li label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    transition: all .25s ease-in-out;
+}
+
+.calendar__content--days-number li input[type="radio"] {
+    display: none;
+}
+
+.calendar__content--days-number li label:hover,
+.calendar__content--days-number li input[type="radio"]:checked~label {
+    background-color: var(--color-bg-check);
+    color: var(--color-secondary);
+}
+
+@media screen and (max-width:420px) {
+    .calendar__content {
+        padding: 1rem;
+    }
+
+    .calendar__content--days {
+        padding: 1rem;
+    }
+
+    .calendar__content--days--name {
+        grid-template-columns: repeat(7, 3.5rem);
+        justify-content: center;
+    }
+
+    .calendar__content--days-number li label {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
