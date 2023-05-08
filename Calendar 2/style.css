@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-primary: #2da0b5;
+    --color-secondary: #319ca7;
+    --color-ter: #f5f5f5;
+    --color-text-1: #66696b;
+    --color-text-2: #7f8184;
+    --color-point-3: #3dd8ea;
+    --color-bg-check: #fdf12f;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--color-primary);
+    background-image: -webkit-linear-gradient(to left bottom, var(--color-primary), var(--color-secondary) 15%);
+    background-image: linear-gradient(to left bottom, var(--color-primary) 20%, var(--color-secondary));
+}
+
+.calendar {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar__content {
+    display: grid;
+    grid-template-columns: minmax(30rem, 40rem);
+    grid-template-rows: repeat(3, min-content);
+}
+
+.calendar__content--months {
+    padding: 1rem 2rem;
+    color: var(--color-text-1);
+    background-color: var(--color-ter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar__content--months i {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.calendar__content--months__month {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.calendar__content--days {
+    padding: 2rem;
+    background-image: url("https://images.pexels.com/photos/733854/pexels-photo-733854.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&dpr=1");
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+}
+
+.calendar__content--days--name {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar__content--days--name li {
+    list-style: none;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.calendar__content--days-number {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, min-content);
+    justify-content: space-between;
+}
+
+.calendar__content--days-number li:first-child {
+    grid-column: 7 / -1;
+}
+
+.calendar__content--days-number li {
+    list-style: none;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar__content--days-number li label {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    transition: all .25s ease-in-out;
+    cursor: pointer;
+}
+
+.calendar__content--days-number li input[type="radio"] {
+    display: none;
+}
+
+.calendar__content--days-number li label:hover,
+.calendar__content--days-number li input[type="radio"]:checked~label {
+    background-color: var(--color-bg-check);
+    color: var(--color-text-1);
+}
+
+.calendar__content--tasks {
+    background-color: var(--color-ter);
+    height: 25rem;
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 1fr;
+    overflow: hidden;
+}
+
+.calendar__content--tasks div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.calendar__content--tasks div svg {
+    background-color: #e7e5e5;
+    color: #7f7f7f;
+    padding: 1rem;
+    width: 6rem;
+    height: 6rem;
+}
+
+.calendar__content--tasks div:nth-child(2) svg {
+    color: #2ec768;
+    margin-top: 2px;
+}
+
+.calendar__content--tasks div p {
+    font-size: 1.5rem;
+    color: var(--color-text-1);
+}
+
+.calendar__content--tasks div p span {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--color-text-2);
+}
+
+.calendar__content--tasks div:last-child {
+    align-self: flex-end;
+    justify-self: end;
+    padding: 3rem;
+    position: relative;
+}
+
+.calendar__content--tasks div:last-child::after {
+    position: absolute;
+    content: "";
+    background-color: var(--color-point-3);
+    top: -1rem;
+    right: -5rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+}
+
+.calendar__content--tasks div:last-child i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-weight: 500;
+    color: #f5f5f5;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@media screen and (max-width:420px) {
+    .calendar__content {
+        padding: 1rem;
+    }
+
+    .calendar__content--days {
+        padding: 1rem;
+    }
+
+    .calendar__content--days--name {
+        grid-template-columns: repeat(7, 3.5rem);
+        justify-content: space-between;
+    }
+
+    .calendar__content--days-number li label {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
