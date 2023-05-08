@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-primary: #10182f;
+    --color-secondary: #f7f8fc;
+    --color-app-bg-1: #4f80f2;
+    --color-app-bg-2: #10182f;
+    --color-text-1: #4b536a;
+    --color-text-2: #8c98ba;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+}
+
+
+.card {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--color-secondary);
+}
+
+.card__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.card__container:first-child {
+    background-color: var(--color-primary);
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+.card__container--content {
+    color: #fff;
+    min-width: 30rem;
+    z-index: 10;
+}
+
+.card__container--content>div:first-child {
+    background-color: var(--color-app-bg-1);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    position: relative;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+.card-settings {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.card__logo>i {
+    font-size: 6rem;
+}
+
+.card__title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.card__title>span {
+    font-size: 1.5rem;
+    padding: 0 .8rem;
+    background-color: #3e6cd9;
+    border-radius: .5rem;
+    margin-left: .2rem;
+}
+
+.card__desc {
+    font-size: 1.5rem;
+}
+
+.card__container--content>div:nth-child(2) {
+    background-color: var(--color-secondary);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+}
+
+.card__container:nth-child(2) .card__container--content>div:nth-child(2) {
+    background-color: var(--color-primary);
+}
+
+.card__nav {
+    padding: 2rem;
+}
+
+.card__nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card__nav ul li {
+    list-style: none;
+}
+
+.card__nav ul a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--color-text-1);
+    padding-bottom: .4rem;
+    position: relative;
+}
+
+.card__container:nth-child(2) .card__nav ul a {
+    color: var(--color-text-2);
+}
+
+.card__nav ul a::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 1.5px;
+    width: 100%;
+    background-color: var(--color-text-1);
+    transform-origin: right;
+    transform: scale(0);
+    transition: transform .25s ease-in-out;
+}
+
+.card__container:nth-child(2) .card__nav ul a::after {
+    background-color: var(--color-text-2);
+}
+
+.card__nav ul a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+.card__app-link {
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 1rem;
+    color: var(--color-text-1);
+    border: 1px solid lightgrey;
+    border-radius: .4rem;
+    transition: all .25s ease-in-out;
+}
+
+.card__app-link:hover {
+    background-color: var(--color-app-bg-1);
+    border-color: var(--color-app-bg-1);
+    color: var(--color-secondary);
+}
+
+@media screen and (max-width:1000px) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .card__container:first-child {
+        clip-path: none;
+    }
+}
