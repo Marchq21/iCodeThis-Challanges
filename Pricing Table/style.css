@@ -1,0 +1,200 @@
+:root {
+    --color-bg-primary: #ebeef2;
+    --color-bg-seconadary: #ffffff;
+    --color-bg-tertiary: #d4d9e0;
+    --color-text-1: #171922;
+    --color-text-2: #828287;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: var(--color-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 1.5rem;
+}
+
+.pricing__header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pricing__header--title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-1);
+}
+
+.pricing__header--plan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    padding: 1.3rem .5rem;
+    background-color: var(--color-bg-tertiary);
+    border-radius: 5rem;
+}
+
+.pricing__header--plan fieldset {
+    border: none;
+}
+
+.pricing__header--plan fieldset input[type="radio"] {
+    display: none;
+}
+
+.pricing__header--plan fieldset label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #858890;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 5rem;
+    transition: all .25s ease-in-out;
+}
+
+.pricing__header--plan fieldset label:hover {
+    background-color: var(--color-bg-seconadary);
+    color: var(--color-text-1);
+}
+
+.pricing__header--plan fieldset input[type="radio"]:checked~label {
+    background-color: var(--color-bg-seconadary);
+    color: var(--color-text-1);
+    box-shadow: 0 4px 16px #1719225d;
+}
+
+.pricing__container {
+    display: grid;
+    grid-template-columns: repeat(2, 35rem);
+    gap: 3rem;
+}
+
+.pricing__container--plan {
+    padding: 4rem 3rem;
+    background-color: var(--color-bg-seconadary);
+    box-shadow: 0 4px 16px #1719222d;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, min-content);
+    row-gap: 2rem;
+}
+
+.pricing__container--plan__title {
+    grid-row: 1 / 2;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--color-text-1);
+}
+
+.pricing__container--plan>div:first-of-type {
+    grid-row: 2 / 3;
+}
+
+.pricing__container--plan__price {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+}
+
+.pricing__container--plan__name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-2);
+}
+
+.pricing__container--plan__desc {
+    grid-row: 3 / 4;
+    font-size: 1.2rem;
+    color: var(--color-text-2);
+}
+
+.pricing__container--plan__link {
+    grid-row: 4 / 5;
+    text-decoration: none;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    border: 2px solid transparent;
+    border-radius: .5rem;
+    transition: all 0.25s ease-in-out;
+}
+
+.pricing__container--plan__link.starter {
+    background-color: #171922;
+    color: var(--color-bg-seconadary);
+}
+
+.pricing__container--plan__link.starter:hover {
+    color: var(--color-text-1);
+    border-color: #a8a9ad;
+    background: none;
+}
+
+.pricing__container--plan__link.professional {
+    margin-top: 3.6rem;
+    color: var(--color-text-1);
+    border-color: #a8a9ad;
+}
+
+.pricing__container--plan__link.professional:hover {
+    background-color: #171922;
+    color: var(--color-bg-seconadary);
+    border-color: transparent;
+}
+
+@media screen and (max-width:780px) {
+
+    .pricing__container {
+        grid-template-columns: 35rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .pricing__container {
+        margin-top: 0;
+    }
+
+    .pricing__header {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .pricing__container {
+        grid-template-columns: 30rem;
+    }
+}

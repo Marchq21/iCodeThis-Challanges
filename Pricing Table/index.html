@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pricing Table Challenge</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="pricing">
+        <header class="pricing__header">
+          <h3 class="pricing__header--title">Choose your plan</h3>
+          <div class="pricing__header--plan">
+            <fieldset class="pricing__header--plan__monthly">
+              <input type="radio" name="plan" class="switch-btn" id="monthly" />
+              <label for="monthly">Monthly</label>
+            </fieldset>
+            <fieldset class="pricing__header--plan__yearly">
+              <input
+                type="radio"
+                name="plan"
+                id="yearly"
+                class="switch-btn"
+                checked
+              />
+              <label for="yearly">Yearly</label>
+            </fieldset>
+          </div>
+        </header>
+        <div class="pricing__container">
+          <div class="pricing__container--plan">
+            <h5 class="pricing__container--plan__title">Starter</h5>
+            <div>
+              <h5 class="pricing__container--plan__price">$8.99 / month</h5>
+              <p class="pricing__container--plan__name">Billed yearly</p>
+            </div>
+            <p class="pricing__container--plan__desc">
+              Ullam voluptate, quos fuga nihil laborum, commodi inventore,
+              incidunt dolorem voluptates adipisci officia pariatur quo iste
+              eveniet. Assumenda minima similique cum sapiente.
+            </p>
+            <a href="#" class="pricing__container--plan__link starter"
+              >Get started</a
+            >
+          </div>
+          <div class="pricing__container--plan">
+            <h5 class="pricing__container--plan__title">Professional</h5>
+            <div>
+              <h5 class="pricing__container--plan__price">$21.99 / month</h5>
+              <p class="pricing__container--plan__name">Billed yearly</p>
+            </div>
+            <p class="pricing__container--plan__desc">
+              Eligendi est dolorum exercitationem atque doloribus odit facere
+              accusamus. Voluptatibus sit doloribus.
+            </p>
+            <a href="#" class="pricing__container--plan__link professional"
+              >Get staryed</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
