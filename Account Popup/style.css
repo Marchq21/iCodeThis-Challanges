@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-bg-primary: #f7f8fc;
+    --color-bg-seconadry: #fff;
+    --color-text-1: #111435;
+    --color-text-2: #828692;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background: #FC466B;
+    background-image: linear-gradient(to right, #3F5EFB, #FC466B);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account {
+    position: relative;
+}
+
+.account__popup {
+    position: absolute;
+    top: -26rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 4rem;
+    border-radius: 1.5rem;
+    color: var(--color-text-1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+.account__popup.show {
+    opacity: 1;
+    top: -29rem;
+    animation: popup-animation .55s ease-in-out;
+}
+
+@keyframes popup-animation {
+    from {
+        transform: translateX(-50%) translateY(20%);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.account__popup::after {
+    position: absolute;
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    bottom: -.6rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background-color: #fff;
+}
+
+.account__popup>div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.account__popup--info {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.account__popup--info>div:first-child {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.account__popup--info__img,
+.account__btn .account__img {
+    width: 7rem;
+    height: 7rem;
+}
+
+.account__popup--info__img img,
+.account__btn .account__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.account__popup--info__name h3:first-child,
+.account__btn .account__name h3:first-child {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.account__popup--info__name h3:nth-child(2),
+.account__btn .account__name h3:nth-child(2) {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.account__popup--info>div:nth-child(2) {
+    padding: .5rem;
+    border-radius: 50%;
+    border: 1px solid #e5e5f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account__popup--info>div:nth-child(2) svg {
+    width: 3rem;
+    height: 3rem;
+}
+
+.connect__account {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #276def;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.connect__account::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -.5rem;
+    width: 100%;
+    height: 0.2rem;
+    transform-origin: left;
+    background-color: #3F5EFB;
+    transition: transform 0.25s ease-in-out;
+    transform: scale(0);
+}
+
+.connect__account:hover::after {
+    transform-origin: left;
+    transform: scale(1);
+}
+
+.connect__account:visited {
+    color: #3F5EFB;
+}
+
+.account__popup>div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.account__popup>div:nth-child(2)>div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.account__btn {
+    padding: 1rem 6rem 1rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f7f8fcab;
+    border-radius: 5rem;
+    cursor: pointer;
+}
