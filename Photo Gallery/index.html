@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Photo Gallery Challenge</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header overall-layout">
+        <a href="#" class="header__logo">Photoxel</a>
+        <nav class="header__nav">
+          <ul class="header__nav--links">
+            <li class="header__nav--links__link">
+              <a href="#">Vector</a>
+            </li>
+            <li class="header__nav--links__link">
+              <a href="#">Illusrations</a>
+            </li>
+            <li class="header__nav--links__link">
+              <a href="#" class="active">Images</a>
+            </li>
+            <li class="header__nav--links__link">
+              <a href="#">Icons</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="toggle-btn">
+          <div></div>
+        </div>
+      </header>
+      <section class="search-upload overall-layout">
+        <form class="search__form">
+          <input type="text" class="search__form--input" placeholder="Search" />
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-search"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+              <path d="M21 21l-6 -6"></path>
+            </svg>
+          </span>
+        </form>
+        <button class="upload-btn">Upload</button>
+      </section>
+      <section class="gallery overall-layout">
+        <figure class="gallery__img">
+          <img
+            src="https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Woman Wearing White Shirt"
+          />
+          <div class="gallery__img--info">
+            <div>
+              <h3 class="gallery__img--info__title">
+                Woman Wearing White Shirt
+              </h3>
+              <div>
+                <span class="gallery__img--info__likes">245 likes</span>
+                <span class="gallery__img--info__shares">35 shares</span>
+              </div>
+            </div>
+            <div class="gallery__img--info__bookmark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-bookmark"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </figure>
+        <figure class="gallery__img">
+          <img
+            src="https://images.pexels.com/photos/1145720/pexels-photo-1145720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Abstract Painting"
+          />
+          <div class="gallery__img--info">
+            <div>
+              <h3 class="gallery__img--info__title">
+                Woman Wearing White Shirt
+              </h3>
+              <div>
+                <span class="gallery__img--info__likes">138 likes</span>
+                <span class="gallery__img--info__shares">22 shares</span>
+              </div>
+            </div>
+            <div class="gallery__img--info__bookmark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-bookmark"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </figure>
+        <figure class="gallery__img">
+          <img
+            src="https://images.pexels.com/photos/6165142/pexels-photo-6165142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Thoughtful man standing near reflecting window"
+          />
+          <div class="gallery__img--info">
+            <div>
+              <h3 class="gallery__img--info__title">
+                Thoughtful man standing near reflecting window
+              </h3>
+              <div>
+                <span class="gallery__img--info__likes">245 likes</span>
+                <span class="gallery__img--info__shares">35 shares</span>
+              </div>
+            </div>
+            <div class="gallery__img--info__bookmark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-bookmark"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </figure>
+        <figure class="gallery__img">
+          <img
+            src="https://images.pexels.com/photos/2335126/pexels-photo-2335126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Troms, Norway"
+          />
+          <div class="gallery__img--info">
+            <div>
+              <h3 class="gallery__img--info__title">Troms, Norway</h3>
+              <div>
+                <span class="gallery__img--info__likes">86 likes</span>
+                <span class="gallery__img--info__shares">12 shares</span>
+              </div>
+            </div>
+            <div class="gallery__img--info__bookmark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-bookmark"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </figure>
+        <figure class="gallery__img">
+          <img
+            src="https://images.pexels.com/photos/2777898/pexels-photo-2777898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Woman Wearing Turtleneck Top"
+          />
+          <div class="gallery__img--info">
+            <div>
+              <h3 class="gallery__img--info__title">
+                Woman Wearing Turtleneck Top
+              </h3>
+              <div>
+                <span class="gallery__img--info__likes">178 likes</span>
+                <span class="gallery__img--info__shares">48 shares</span>
+              </div>
+            </div>
+            <div class="gallery__img--info__bookmark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-bookmark"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </figure>
+        <figure class="gallery__img">
+          <img
+            src="https://images.pexels.com/photos/7903811/pexels-photo-7903811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Vintage camper on beach under palms"
+          />
+          <div class="gallery__img--info">
+            <div>
+              <h3 class="gallery__img--info__title">
+                Vintage camper on beach under palms
+              </h3>
+              <div>
+                <span class="gallery__img--info__likes">292 likes</span>
+                <span class="gallery__img--info__shares">84 shares</span>
+              </div>
+            </div>
+            <div class="gallery__img--info__bookmark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-bookmark"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </figure>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
