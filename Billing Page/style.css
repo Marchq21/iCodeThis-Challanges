@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-bg-primary: #e8e9fd;
+    --color-bg-secondary: #f8f9ff;
+    --color-orange-900: #EA4C3C;
+    --color-text-1: #1c174c;
+    --color-text-2: #747399;
+    --color-text-3: #393A62;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    background-color: var(--color-bg-primary);
+}
+
+a {
+    text-decoration: none;
+    transition: all .20s ease-in-out;
+}
+
+li {
+    list-style: none;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-text-1);
+}
+
+p {
+    color: var(--color-text-2);
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.billing {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: .5fr 1fr 0.5fr;
+    gap: 5rem;
+    border-radius: 2rem;
+    background-color: #fdfcff;
+    position: relative;
+}
+
+.billing::before {
+    position: absolute;
+    content: "";
+    top: -5%;
+    left: -5rem;
+    width: 20rem;
+    height: 110%;
+    background-color: var(--color-orange-900);
+    border-radius: 2rem;
+}
+
+.billing__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem 3rem;
+    background-color: var(--color-bg-secondary);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    position: relative;
+
+}
+
+.billing__menu--profile {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.billing__menu--profile__img {
+    width: 5.5rem;
+    height: 5.5rem;
+}
+
+.billing__menu--profile__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1.5rem;
+}
+
+.billing__menu--profile__info--name {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.billing__menu--profile__info--username {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--color-text-2);
+}
+
+.billing__menu--links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.billing__menu--links__link {
+    position: relative;
+}
+
+.billing__menu--links__link a,
+.billing__menu--logout {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    color: var(--color-text-2);
+    padding: 0.5rem 0;
+}
+
+.billing__menu--links__link.active a {
+    color: var(--color-text-3);
+}
+
+.billing__menu--links__link::before {
+    position: absolute;
+    content: "";
+    top: -10%;
+    left: -1.5rem;
+    width: 4px;
+    height: 120%;
+    background-color: var(--color-orange-900);
+    border-radius: 5rem;
+    transform: scale(0);
+    transition: transform 0.15s ease-in;
+}
+
+.billing__menu--links__link.active::before {
+    transform: scale(1);
+}
+
+.billing__menu--links__link:hover::before {
+    transform: scale(1);
+}
+
+.billing__menu--links__link:hover a {
+    color: var(--color-text-3);
+}
+
+.billing__menu--logout {
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+}
+
+.billing__menu--logout:hover {
+    color: rgb(241, 90, 90);
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.btn-show,
+.btn-close {
+    border: 1px solid rgb(226, 223, 223);
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem;
+    cursor: pointer;
+}
+
+.btn-close {
+    display: none;
+}
+
+.billing__content {
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.billing__content--title {
+    font-size: 2.8rem;
+}
+
+.billing__content--order-title h5,
+.billing__content--payment__tiltle {
+    font-size: 1.5rem;
+}
+
+.billing__content--order-title p,
+.billing__content--payment__desc {
+    font-size: 1.3rem;
+}
+
+.billing__content--order-table {
+    width: 100%;
+    border-spacing: 2rem;
+}
+
+.billing__content--order-table>thead th {
+    text-align: start;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-text-2);
+}
+
+.billing__content--order-table>tbody tr {
+    position: relative;
+    z-index: 1;
+    transition: all .15s ease-in-out;
+}
+
+.billing__content--order-table>tbody tr::after {
+    position: absolute;
+    content: "";
+    top: -10%;
+    left: -2%;
+    width: 93%;
+    height: 120%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px #9b98e252;
+    border-radius: .5rem;
+    z-index: -1;
+    transform: scale(0);
+    transition: all 0.15s ease-in-out;
+}
+
+.billing__content--order-table>tbody tr:hover::after {
+    transform: scale(1);
+}
+
+.billing__content--order-table>tbody tr:hover {
+    transform: scale(1.05);
+}
+
+.billing__content--order-table>tbody>tr>td {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-text-1);
+    padding: 1rem .5rem;
+}
+
+.billing__content--order-table>tbody>tr>td>a {
+    padding: .5rem 1rem;
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--color-text-3);
+}
+
+.billing__content--order-table>tbody>tr>td>a:hover {
+    background-color: var(--color-orange-900);
+    color: #f8f9ff;
+    border-color: var(--color-orange-900);
+}
+
+.billing__content--order-table>tfoot>tr>td>a {
+    font-size: 1.4rem;
+    color: var(--color-orange-900);
+    text-decoration: underline;
+}
+
+.billing__content--order-table>tfoot>tr>td>a:hover {
+    text-decoration: none;
+}
+
+.billing__content--payment {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.billing__content--payment>div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.billing__content--payment__visa {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.billing__content--payment__visa--logo {
+    width: 8rem;
+    height: 5rem;
+    padding: .5rem;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: .5rem;
+}
+
+.billing__content--payment__visa--logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.billing__content--payment__visa p {
+    font-size: 1.6rem;
+    color: var(--color-text-3);
+    font-weight: 600;
+}
+
+.billing__content--payment__remove-link {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text-3);
+    padding: .5rem 1rem;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: .5rem;
+}
+
+.billing__content--payment__remove-link:hover {
+    background-color: var(--color-text-3);
+    color: var(--color-bg-secondary);
+    border-color: var(--color-text-3);
+}
+
+.billing__plan {
+    padding: 5rem 3rem 5rem 0;
+}
+
+.billing__plan>div {
+    margin-top: 10rem;
+    padding: 2rem;
+    background-color: var(--color-orange-900);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 1rem;
+}
+
+.billing__plan--mini-title,
+.billing__plan--title,
+.billing__plan--date,
+.billing__plan--cancel-link {
+    color: #fff;
+}
+
+.billing__plan--mini-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+.billing__plan--title {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.billing__plan--date {
+    font-size: 1.2rem;
+}
+
+.billing__plan--cancel-link {
+    padding: .5rem;
+    font-size: 1.4rem;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: .5rem;
+}
+
+.billing__plan--cancel-link:hover {
+    background-color: #fff;
+    color: var(--color-orange-900);
+}
+
+@media screen and (max-width:960px) {
+    body {
+        background-color: #fff;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        align-items: start;
+    }
+
+    .hamburger-menu.active .btn-close {
+        display: flex;
+    }
+
+    .hamburger-menu.active .btn-show {
+        display: none;
+    }
+
+    .container {
+        align-items: start;
+    }
+
+    .billing {
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-rows: repeat(2, min-content);
+        padding: 0 2rem;
+        border-radius: 0;
+        gap: 3rem;
+    }
+
+    .billing::before {
+        display: none;
+    }
+
+    .billing__menu {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 2rem;
+        border-radius: 0;
+    }
+
+    .billing__menu--profile {
+        flex-shrink: 0;
+    }
+
+    .billing__menu--links {
+        position: fixed;
+        top: 9.5rem;
+        right: -2rem;
+        background-color: var(--color-bg-secondary);
+        padding: 4rem 6rem;
+        align-items: center;
+        height: 100%;
+        transform: translateX(100%);
+        transition: transform .20s ease-in-out;
+        z-index: 10;
+    }
+
+    .billing__menu--links.active {
+        transform: translateX(0);
+
+    }
+
+    .billing__menu--links__link::before {
+        left: 0;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+    }
+
+    .billing__menu--logout {
+        position: fixed;
+        left: auto;
+        right: 2rem;
+        bottom: 4rem;
+        transform: scale(0);
+        transition: all .25s ease-in-out;
+        z-index: 11;
+    }
+
+    .billing__menu--logout.show {
+        transform: scale(1);
+    }
+
+    .billing__content,
+    .billing__plan {
+        padding: 2rem;
+    }
+
+    .billing__plan>div {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .billing {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, min-content);
+        padding: 0 2rem;
+        border-radius: 0;
+    }
+
+    .billing__plan {
+        justify-self: start;
+        width: 30rem;
+    }
+
+    .billing__content--payment>div:last-child {
+        flex-direction: column;
+        align-items: start;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .billing__content--order-table>tbody tr::after {
+        display: none;
+    }
+
+    .billing__content--order-table>tbody tr:hover {
+        transform: scale(1);
+    }
+
+    .billing__menu {
+        padding: 2rem 0 0;
+    }
+
+    .billing__content {
+        padding: 0;
+    }
+
+    .billing__plan {
+        padding: 0 0 2rem;
+    }
+}
